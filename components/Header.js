@@ -1,6 +1,7 @@
 import React from 'react'
 import { HomeIcon, CollectionIcon, ChatIcon, MusicNoteIcon } from '@heroicons/react/outline'
 import { useRouter } from 'next/router'
+import HeaderItem from './HeaderItem'
 
 const Header = () => {
     //get the current url from the router
@@ -15,11 +16,13 @@ const Header = () => {
 
             <div className='flex text-sm md:text-md flex-1 space-x-10 justify-center'>
                 {/* About */ }
-                <div className={ `cursor-pointer flex items-center hover:text-blue-400 transition-colors ease-out space-x-1 group ${isAbout && 'text-blue-500'}` }><HomeIcon className='group-hover:animate-bounce' height="18" width="18" /> <p>About</p></div>
+                <HeaderItem text="About" Icon={ HomeIcon } url="/" active={ isAbout } />
                 {/* Music Sheets */ }
-                <div className='cursor-pointer flex items-center hover:text-blue-400 transition-colors ease-out space-x-1 group'><CollectionIcon className='group-hover:animate-bounce' height="18" width="18" /><p>Music Sheets</p></div>
+                <HeaderItem text="Music Sheets" Icon={ CollectionIcon } url="/music-sheets" active={ isMusicSheets } />
                 {/* Contact me */ }
-                <div className='cursor-pointer flex items-center hover:text-blue-400 transition-colors ease-out space-x-1 group'> <ChatIcon className='group-hover:animate-bounce' height="18" width="18" /><p>Contact me</p></div>
+                <HeaderItem text="Contact me" Icon={ ChatIcon } url="/contact" active={ isContact } />
+
+
             </div>
         </div>
     )
