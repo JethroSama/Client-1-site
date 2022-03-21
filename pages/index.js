@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
-import HeroImage from '../components/HeroImage'
+import PianoImg from '../images/piano.jpg'
 
 export default function Home() {
   return (
@@ -14,16 +14,21 @@ export default function Home() {
 
       {/* Header */ }
       <Header />
-      <div className='md:flex px-5 md:px-10 pt-40'>
-        <div className='max-w-xl'>
+      <div className='md:flex px-5 md:px-10'>
+        <div className='flex md:hidden relative w-full h-[20vh] mt-3 rounded-md overflow-hidden shadow-md'>
+          <Image className='object-cover' layout='fill' objectPosition='center' src={ PianoImg } alt='heroimg' />
+
+        </div>
+        <div className='lg:max-w-6xl pt-10 md:pt-40'>
 
           <h1 className='text-lg md:text-2xl mb-5'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, ducimus.
           </h1>
           <p className='max-w-sm text-xs md:text-sm'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum qui quibusdam tenetur expedita magni officiis tempora, alias consequuntur eligendi similique?</p>
         </div>
-        <div>
-          Hello
+        <div className='hidden md:flex relative w-full lg:w-[50%] h-[90vh] mt-3 rounded-md overflow-hidden shadow-md'>
+          <Image className='object-cover' layout='fill' objectPosition='center' src={ PianoImg } alt='heroimg' />
+
         </div>
       </div>
 
