@@ -24,7 +24,7 @@ const MusicSheets = ({ data }) => {
                 </div>
                 <div>
                     { data.map(item => (
-                        <TableItem key={ item.id } title={ item.title } url={ item.url } />
+                        <TableItem key={ item.id } title={ item.title } url={ item.pdf } />
                     )) }
                 </div>
             </div>
