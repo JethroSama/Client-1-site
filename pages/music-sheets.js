@@ -3,7 +3,7 @@ import Header from '../components/Header'
 import TableItem from '../components/TableItem'
 import { getMusicSheets } from '../lib/notionDb'
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
     const data = await getMusicSheets()
     console.log(data)
     return {
