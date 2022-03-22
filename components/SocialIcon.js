@@ -1,8 +1,17 @@
 import React from 'react'
+import Image from 'next/image'
 
-const SocialIcon = () => {
+const SocialIcon = ({ image, url }) => {
     return (
-        <div>SocialIcon</div>
+        <div onClick={
+            () => {
+                // open the url in a new tab
+                window.open(url, '_blank')
+            }
+        }>
+            {/* add facebook icon */ }
+            <Image height="50" width="50" src={ image } alt={ url } />
+        </div>
     )
 }
 
