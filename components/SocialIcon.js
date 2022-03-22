@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const SocialIcon = ({ image, url }) => {
     return (
-        <div onClick={
+        <div className='cursor-pointer' onClick={
             () => {
                 // open the url in a new tab
                 window.open(url, '_blank')
