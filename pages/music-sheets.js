@@ -23,9 +23,9 @@ const MusicSheets = ({ data }) => {
                     <p>Title</p>
                 </div>
                 <div>
-                    { data.map(item => (
+                    { data.length > 1 ? data.map(item => (
                         <TableItem key={ item.id } title={ item.title } url={ item.pdf } />
-                    )) }
+                    )) : <p>No music sheets found</p> }
                 </div>
             </div>
         </div>
