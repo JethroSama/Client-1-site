@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
+import TableItem from '../components/TableItem'
 import { getMusicSheets } from '../lib/notionDb'
 
 export async function getStaticProps() {
@@ -22,11 +23,9 @@ const MusicSheets = ({ data }) => {
                     <p>Title</p>
                 </div>
                 <div>
-                    <div className='flex group cursor-pointer justify-between items-center shadow-sm hover:shadow-md h-14 transition-all ease-out hover:bg-gray-50 px-2'>
-                        <p className='text-sm'>Test1</p>
-                        <button className='hidden group-hover:block border-2 rounded-lg p-1 hover:border-blue-300 hover:text-blue-400 transition-all ease-out text-sm'>Download</button>
-                    </div>
-
+                    { data.map(item => (
+                        <TableItem key={ item.id } title={ item.title } url={ item.url } />
+                    )) }
                 </div>
             </div>
         </div>
